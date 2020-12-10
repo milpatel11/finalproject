@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>USER PANEL</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-sm navbar-light bg-light">
+        <div class="" id="collapsibleNavId">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="/profile">My profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/credit">Credit Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/inbox">Inbox</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/support">Support</a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <a class="text-primary"> Welcome<span class="text-primary" th:text="${user.firstName}"></span></a>
+                <a href="/logout" class="btn btn-primary btn-lg my-2 my-sm-0">Logout</a>
+            </form>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="text-center">
+            <h3>Credit Information Profile</h3>
+        </div>
+
+        <div class="row">
+            <div class="col-md-7">
+                <div class="card shadow">
+                    <form action="/add" method="POST">
+                        <h4>Add new card</h4>
+                        <label>
+                            Credit Card Type:
+                            <div>
+                                <label class="btn btn-primary active">
+                                    <input type="radio" name="card_type" autocomplete="off" checked>Master
+                                    Card
+                                </label>
+                                <label class="btn btn-primary">
+                                    <input type="radio" name="card_type" autocomplete="off">Visa
+                                </label>
+                                <label class="btn btn-primary">
+                                    <input type=" radio" name="card_type" autocomplete="off ">American
+                                    Express
+                                </label>
+                            </div>
+                        </label>
+
+                        <label for="expiry_date">
+                            Expiry Date
+                            <input type="date" name="expiry_date" id="expiry_date">
+                        </label>
+
+                        <label for="name">
+                            Card holder name:
+                            <input type="text" name="name" id="name">
+                        </label>
+
+                        <label for="card_number">Credit Card Number:
+                            <input type="number" name="card_number" id="card_number">
+                        </label>
+
+                        <label for="set_default">
+                            <input type="checkbox" name="set_default" id="set_default">Save as Default or preffered
+                        </label>
+
+                        <button type="button" class="btn btn-primary">Add/update</button>
+
+                    </form>
+
+
+                </div>
+
+            </div>
+            <div class="col-md-5">
+                <div class="card shadow">
+                    <h4>List exisiting cards</h4>
+
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>USER PANEL</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<nav class="navbar navbar-expand-sm navbar-light bg-light">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
+            aria-controls="collapsibleNavId"
+            aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavId">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item">
+                <a class="nav-link" href="/tab1">Tab1</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/tab2">Tab2</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/tab3">Tab3</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/tab4">Tab4</a>
+            </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+            <a class="text-primary"> Welcome<span class="text-primary" th:text="${user.firstName}"></span></a>
+            <a href="/logout" class="btn btn-primary btn-lg my-2 my-sm-0">Logout</a>
+        </form>
+    </div>
+</nav>
+
+<div class="container">
+    <img src="download.jpg">
+</div>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>USER PANEL</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+<nav class="navbar navbar-expand-sm navbar-light bg-light">
+    <div class="collapse navbar-collapse" id="collapsibleNavId">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item">
+                <a class="nav-link" href="/profile">My profile</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/credit">Credit Profile</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/inbox">Inbox</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/support">Support</a>
+            </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+            <a class="text-primary"> Welcome <span class="text-primary" th:text="${user.firstName}"></span></a>
+            <a href="/logout" class="btn btn-primary btn-lg my-2 my-sm-0">Logout</a>
+        </form>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="text-center">
+        <h3>My Profile</h3>
+    </div>
+
+    <div class="row">
+        <div class="col-md-7">
+            <div class="card shadow p-4">
+                <form action="/addUser" method="POST">
+                    <h4>Add/Edit Profile</h4>
+                    <table>
+                        <tr>
+                            <td>First Name</td>
+                            <td><input type="text" name="first_name" autocomplete="off"
+                                       th:value="${user.firstName}"></td>
+                            <td>Last Name</td>
+                            <td>
+                                <input type="text" name="last_name" autocomplete="off" th:value="${user.lastName}">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                Email:
+                            </td>
+                            <td>
+                                <input type="email" name="email" id="email" th:value="${user.email}">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                Date of Birth:
+                            </td>
+                            <td>
+                                <input type="date" name="dob" id="dob" th:text="${user.firstName}">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                Address:
+                            </td>
+                            <td>
+                                <input type="text" name="address" id="address">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>City</td>
+                            <td>
+                                <input type="text" name="city" autocomplete="off">
+                            </td>
+                            <td>Country</td>
+                            <td>
+                                <input type="text" name="county" autocomplete="off">
+                            </td>
+                        </tr>
+                        <tr for="set_default">
+                            <input type="checkbox" name="set_default" id="set_default">Default Billing Address
+                        </tr>
+                        <tr for="set_shipping">
+                            <input type="checkbox" name="set_shipping" id="set_shipping">Default Shipping Address
+                        </tr>
+
+                    </table>
+
+
+                    <button type="button" class="btn btn-primary">Add/update</button>
+
+                </form>
+            </div>
+        </div>
+
+        <div class="col-md-5">
+            <div class="card shadow p-4">
+                <h4>List existing Profiles</h4>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+</body>
+
+</html>
